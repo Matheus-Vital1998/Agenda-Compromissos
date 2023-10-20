@@ -1,7 +1,6 @@
 ﻿@model Agenda_Compromissos.Models.Usuario;
-
 @{
-    ViewData["Title"] = "Tela Cadastro";
+    ViewData["Title"] = "Tela Login";
 }
 
 <!DOCTYPE html>
@@ -10,21 +9,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/css/login.css">
-    <title>Cadastro</title>
+    <title>Tela de cadastro</title>
 </head>
 <body class="login-bg">
     <div class="login-container">
         <form class="login-form" method="post" asp-action="CadastrarUsuario" asp-controller="Login">
-            <h1>Login</h1>
-            <label for="username">Name:</label>
-            <input type="text" id="username" asp-for="Nome" required>
+            <h1>Cadastro</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" asp-for="Nome" required>
             <label for="username">Username:</label>
             <input type="text" id="username" asp-for="Login" required>
             <label for="password">Password:</label>
             <input type="password" id="password" asp-for="Senha" required>
-            <button type="submit">Login</button>
+            <button type="submit">Cadastrar</button>
             <div class="text-center">
-                <a class="link" asp-action="Index" asp-controller="Login">Voltar</a>
+                <a class="link" asp-action="Index" asp-controller="Login">Voltar </a>
             </div>
         </form>
     </div>

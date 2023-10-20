@@ -24,14 +24,34 @@
         </main>
     </div>
 
-    <footer class="footer text-muted">
-        <div class="container text-center">
+    <footer class="footer text-muted bg-color">
+        <div class="text-center">
             &copy; 2023 - Agenda de compromissos <a asp-area="" asp-controller="Login" asp-action="Sobre">Sobre</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @{
+        var errorMessage = TempData["ErrorMessage"] as string;
+        var validationError = TempData["ValidationErrors"] as string;
+    }
+
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <script>
+            alert('@Html.Raw(errorMessage)');
+        </script>
+    }
+
+    @if (!string.IsNullOrEmpty(validationError))
+    {
+        <script>
+            alert('@Html.Raw(validationError)');
+        </script>
+    }
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

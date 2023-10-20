@@ -36,23 +36,38 @@ namespace Agenda_Compromissos.Controllers
             if (ModelState.IsValid)
             {
                 var user = _context.Usuario.FirstOrDefault(x => x.Login == usuario.Login);
-                if(user == null)
+                if (user == null)
                 {
-                    _notyfService.Error("Usuario não cadastrado");
+                    TempData["ErrorMessage"] = "Usuário não cadastrado";
                 }
                 else if (user.Senha != usuario.Senha)
                 {
-                    _notyfService.Error("Credenciais invalidas!");
+                    TempData["ErrorMessage"] = "Credenciais inválidas!";
                 }
                 else
                 {
-                    return RedirectToAction("Index","Compromisso");
+                    return RedirectToAction("Index", "Compromisso");
                 }
             }
-            return RedirectToAction("Index","Login");
+
+            else
+            {
+                TempData["ValidationErrors"] = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .FirstOrDefault(); 
+            }
+
+            return RedirectToAction("Index", "Login");
+        }
+
+        public IActionResult Cadastrar()
+        {
+            return View();
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CadastrarUsuario([Bind("Id,Nome,Login,Senha")] Usuario usuario)
         {
             if (ModelState.IsValid)
@@ -61,7 +76,7 @@ namespace Agenda_Compromissos.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(usuario);
+            return RedirectToAction("Index", "Login");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

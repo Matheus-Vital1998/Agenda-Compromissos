@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Agenda-Compromissos.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\FH185\\Documents\\Projetos\\Agenda-Compromissos\\Agenda-Compromissos\\wwwroot\\css\\agenda.css",
+      "PackagePath": "staticwebassets\\css\\agenda.css"
+    },
+    {
       "Id": "C:\\Users\\FH185\\Documents\\Projetos\\Agenda-Compromissos\\Agenda-Compromissos\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
