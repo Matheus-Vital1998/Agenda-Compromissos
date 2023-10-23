@@ -56,7 +56,7 @@ namespace Agenda_Compromissos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,DataCompromisso,HoraCompromisso,Participantes,Descricao")] Compromisso compromisso)
+        public async Task<IActionResult> Create([Bind("Id,DataCompromisso,Endereco,Participantes,Descricao")] Compromisso compromisso)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace Agenda_Compromissos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DataCompromisso,HoraCompromisso,Participantes,Descricao")] Compromisso compromisso)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DataCompromisso,Endereco,Participantes,Descricao")] Compromisso compromisso)
         {
             if (id != compromisso.Id)
             {

@@ -15,10 +15,10 @@ namespace Agenda_Compromissos.Models
         [Required(ErrorMessage = "A data do compromisso é um campo obrigatorio!")]
         public DateTime DataCompromisso { get; set; }
      
-        [Column("Hora")]
-        [Display(Name = "Hora")]
+        [Column("Endereco")]
+        [Display(Name = "Endereco")]
         [Required(ErrorMessage = "A hora do compromisso é um campo obrigatorio!")]
-        public string  HoraCompromisso { get; set; }
+        public string  Endereco { get; set; }
 
         [Column("Participantes")]
         public string Participantes { get; set; }

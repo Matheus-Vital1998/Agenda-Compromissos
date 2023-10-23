@@ -55,7 +55,7 @@ namespace Agenda_Compromissos.Controllers
                 TempData["ValidationErrors"] = ModelState.Values
                     .SelectMany(v => v.Errors)
                     .Select(e => e.ErrorMessage)
-                    .FirstOrDefault(); 
+                    .FirstOrDefault();
             }
 
             return RedirectToAction("Index", "Login");
@@ -83,6 +83,33 @@ namespace Agenda_Compromissos.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ValidaUsuario(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = _context.Usuario.FirstOrDefault(x => x.Login == usuario.Login);
+
+                if (user != null)
+                {
+                    TempData["ErrorMessage"] = "Usuário digitado já existe!";
+                }
+                else
+                {
+                    return await CadastrarUsuario(usuario);
+                }
+            }
+            else
+            {
+                TempData["ValidationErrors"] = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .FirstOrDefault();
+            }
+
+            return RedirectToAction("Index", "Login");
         }
     }
 }

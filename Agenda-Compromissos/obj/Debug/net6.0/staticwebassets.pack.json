@@ -9,6 +9,22 @@
       "PackagePath": "staticwebassets\\css\\agenda.css"
     },
     {
+      "Id": "C:\\Users\\FH185\\Documents\\Projetos\\Agenda-Compromissos\\Agenda-Compromissos\\wwwroot\\css\\criacao.css",
+      "PackagePath": "staticwebassets\\css\\criacao.css"
+    },
+    {
+      "Id": "C:\\Users\\FH185\\Documents\\Projetos\\Agenda-Compromissos\\Agenda-Compromissos\\wwwroot\\css\\detalhes.css",
+      "PackagePath": "staticwebassets\\css\\detalhes.css"
+    },
+    {
+      "Id": "C:\\Users\\FH185\\Documents\\Projetos\\Agenda-Compromissos\\Agenda-Compromissos\\wwwroot\\css\\edicao.css",
+      "PackagePath": "staticwebassets\\css\\edicao.css"
+    },
+    {
+      "Id": "C:\\Users\\FH185\\Documents\\Projetos\\Agenda-Compromissos\\Agenda-Compromissos\\wwwroot\\css\\exclusao.css",
+      "PackagePath": "staticwebassets\\css\\exclusao.css"
+    },
+    {
       "Id": "C:\\Users\\FH185\\Documents\\Projetos\\Agenda-Compromissos\\Agenda-Compromissos\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },

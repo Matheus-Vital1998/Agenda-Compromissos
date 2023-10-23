@@ -33,3 +33,10 @@ body {
     text-align: center;
     padding: 10px 0; 
 }
+
+.btn-equal {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color:white;
+}
