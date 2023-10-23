@@ -40,10 +40,10 @@ namespace Agenda_Compromissos.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Descricao");
 
-                    b.Property<string>("HoraCompromisso")
+                    b.Property<string>("Endereco")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Hora");
+                        .HasColumnName("Endereco");
 
                     b.Property<string>("Participantes")
                         .IsRequired()
