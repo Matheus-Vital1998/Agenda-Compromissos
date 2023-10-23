@@ -1,0 +1,48 @@
+﻿@model Agenda_Compromissos.Models.Compromisso
+
+@{
+    ViewData["Title"] = "Detalhes do Compromisso";
+}
+
+<link rel="stylesheet" href="~/css/detalhes.css" asp-append-version="true" />
+
+<h1 class="agenda-title">Detalhes do Compromisso</h1>
+
+<div class="container details-container">
+    <div>
+        <h4 class="font-weight-bold">Compromisso</h4>
+        <hr />
+        <dl class="row">
+            <div class="col-sm-12">
+                <dt>
+                    <Label>Data e Hora</Label>
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.DataCompromisso)
+                </dd>
+                <dt>
+                    <Label>Endereço</Label>
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Endereco)
+                </dd>
+                <dt>
+                    <Label>Participantes</Label>
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Participantes)
+                </dd>
+                <dt>
+                    <Label>Descrição</Label>
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Descricao)
+                </dd>
+            </div>
+        </dl>
+    </div>
+    <div>
+        <a class="btn btn-info btn-equal" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+        <a class="btn btn-secondary btn-equal" asp-action="Index">Voltar</a>
+    </div>
+</div>

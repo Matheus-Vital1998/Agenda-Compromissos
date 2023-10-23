@@ -1,0 +1,36 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #87CEEB; 
+}
+
+.navbar-nav .nav-link {
+    font-size: 14px; 
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+}
+
+body {
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+
+.footer {
+    padding: 15px 0;
+    font-size: 14px;
+}

@@ -1,0 +1,42 @@
+﻿body {
+    background-image: url('../img/fundo-sobre.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000000;
+}
+
+.container {
+    max-width: 600px; 
+    margin-top: 30px;
+    margin-bottom: 50px; 
+    margin-left: 10px; 
+    margin-right: auto; 
+}
+
+h1 {
+    text-align: left;
+    font-size: 30px; 
+}
+
+p, ul {
+    text-align: left; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0; 
+}
+
+.btn-equal {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color:white;
+}

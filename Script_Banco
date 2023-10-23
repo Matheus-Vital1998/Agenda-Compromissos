@@ -1,0 +1,36 @@
+Script do banco de dados ( Criar em localhost )
+
+Seguir o script abaixo para criação do banco de dados
+
+[Passo 1] 
+CREATE DATABASE [DB_AgendaCompromissos]
+
+[Passo 2]  
+USE [DB_AgendaCompromissos]
+
+CREATE TABLE [dbo].[Usuario](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [nvarchar](max) NOT NULL,
+	[Login] [nvarchar](max) NOT NULL,
+	[Senha] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+))
+
+[Passo 3]
+USE [DB_AgendaCompromissos]
+
+CREATE TABLE [dbo].[Compromisso](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Data] [datetime2](7) NOT NULL,
+	[Endereco] [nvarchar](max) NOT NULL,
+	[Participantes] [nvarchar](max) NOT NULL,
+	[Descricao] [nvarchar](max) NOT NULL,
+ CONSTRAINT [PK_Compromisso] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+))
+
+
+

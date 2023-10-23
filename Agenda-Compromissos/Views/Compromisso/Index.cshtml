@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Agenda_Compromissos.Models.Compromisso>
+
+@{
+    ViewData["Title"] = "Agenda";
+}
+
+<link rel="stylesheet" href="~/css/agenda.css" asp-append-version="true" />
+
+<h1>Agenda</h1>
+<br />
+
+<p class="mb-2 mt-2 ml-3">Seja bem vindo novamente! </p>
+<p class="text-danger mb-2 mt-2 ml-3">Acompanhe de perto seus compromissos, e não fique de fora!</p>
+
+
+<div class="container">
+    <table class="table table-bordered mt-3">
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    Data e Hora
+                </th>
+                <th>
+                    Endereço
+                </th>
+                <th>
+                    Participantes
+                </th>
+                <th>
+                    Descrição
+                </th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataCompromisso)
+                    </td>
+                    <td style="word-wrap: break-word;">
+                        @Html.DisplayFor(modelItem => item.Endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Participantes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        <a class="btn btn-info btn-sm" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                        <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        <a class="btn btn-info btn-sm" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-start mt-2">
+        <a class="btn btn-success btn-sm mr-2" style="margin-right: 8px;" asp-action="Create">Novo</a>
+        <a class="btn btn-secondary btn-sm" asp-action="Index" asp-controller="Login">Sair</a>
+    </div>
+</div>
